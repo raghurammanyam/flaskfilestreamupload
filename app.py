@@ -1,8 +1,11 @@
 from flask_restful import Api
-from config import app
+from config import app,cwd
 from controller import uploadFile
 from flask_session import Session
+import os
 
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=cwd+"/keelaa.json"
 api=Api(app)
 Session(app)
 
