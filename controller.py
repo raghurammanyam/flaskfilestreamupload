@@ -22,7 +22,7 @@ class uploadFile(Resource):
         file = request.files['file']
         abc=cwd+'/'+str(datetime.now())
         target_dir = os.makedirs(abc)
-        print(cwd,target_dir)
+        # print(cwd,target_dir)
         namedfile=file.filename
 
         save_path = os.path.join(cwd, secure_filename(file.filename))
@@ -70,7 +70,7 @@ class uploadFile(Resource):
         for x in os.listdir(abc):
             for y in os.listdir(abc+'/'+x):
                 back=gmulti(abc+'/'+x+'/'+y,y)
-                print(back)
+                # print(back)
                 
         return make_response(("Chunk upload successful", 200))
 
